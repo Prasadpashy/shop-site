@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #container{
+            display: flex;
+            flex-direction: column;
+            width:200px;
+            height:300px;
+            background-color: bisque;
+            border:2px solid black;
+            border-radius:10px;
+            padding:10px;
+            align-items: center;
+            /* align-self: center;
+            justify-content: center;
+            justify-items: center;
+            justify-self: center; */
+
+        } 
+    </style>
+</head>
+
+
+<body>
+    
+    <div id="container">
+        <h1>Sign up</h1>
+name*:<input type="text" name="username" id="username">
+password*<input type="password" name="password" id="password">
+confirm password*:<input type="password" name="confirm_password" id="confirm_password">
+Phone number<input type="text" name="phone_number" id="phone_number">
+<h3 id="error"></h3>
+<Button id="submit" onclick="submit()"> submit</Button>
+</div>
+</body>
+<Script>
+
+
+    // setInterval(submit(), 3000);
+    function submit()
+    {
+   let username=document.getElementById("username")
+   let password=document.getElementById("password");
+   let phone_number=document.getElementById("phone_number");
+   let confirm_password =document.getElementById("confirm_password");
+   let error=document.getElementById("error").innnerHtml;
+   let j="your Entered username and password are same";
+   if(password.value!=confirm_password.value)
+   {
+    document.getElementById("error").innerHTML="your password and confirm passowrd are not same";
+   }
+   if(username==password)
+   {
+      console.log("eror")
+    document.getElementById("error").innerHTML="your Entered username and password are same";
+
+   }
+   
+   else if(password.value==""||username.value=="")
+   {
+    document.getElementById("error").innerHTML="username and password is mandatory";
+
+    }
+    else{
+        var Susername=document.getElementById("username").value
+        var Spassword=document.getElementById("password").value
+
+    i=localStorage.setItem(Susername,Spassword)
+    j=localStorage.key(0);
+    }
+    // -------------------------------------------creating login request---------------------------------------------
+//     if(Susername==localStorage.getItem(Susername))
+// {
+// console.log("sucess loggin!")}
+//     }
+// ------------------------------------------------------------------------------------------------------------------------
+    }
+</Script>
+
